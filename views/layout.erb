@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Ryan Hamilton is a Web Designer and Developer specializing in User Experience Design and Development." />
+    <title>Ryan Hamilton</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/stylesheets/facebox.css" type="text/css" media="all" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script src="/javascripts/modernizr.min.js"></script>
+  </head>
+  <body>
+    <div id="headerBlock">
+      <header>
+        <div>
+          <h1>Ryan <abbr title="Armstrong">A</abbr>. Hamilton</h1>
+          <h2>Designer &amp; Builder of a nicer internet</h2>
+          <nav>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div id="pageBodyBlock">
+      <div id="pageBody">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footerBlock">
+
+
+
+      <footer>Ryan <abbr title="Armstrong">A</abbr>. Hamilton &copy; <%= Time.now.year %> <span><a href="https://github.com/ryanahamilton/resume">View source</a> on GitHub.</span></footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/javascripts/facebox.js"></script>
+    <script src="/javascripts/application.js"></script>
+    <script>
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+      try {
+      var pageTracker = _gat._getTracker("UA-66144-28");
+      pageTracker._trackPageview();
+      } catch(err) {}</script>
+  </body>
+</html>
