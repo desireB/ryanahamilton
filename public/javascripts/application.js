@@ -20,12 +20,8 @@ rah.home = (function($, undefined){
     });
 
 
+    $('nav a').anchorAnimate()
 
-    // Fallback if placeholder attribute is not supported
-    // if(!Modernizr.input.placeholder) {
-    //
-    //
-    // }
 
 
 
