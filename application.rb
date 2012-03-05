@@ -4,11 +4,12 @@ require 'sass' # CSS Preprocessing
 require 'pony' # Email Delivery
 
 # Variables
-set :app_domain, ENV['APP_DOMAIN'] || 'localhost:4567'
+set :app_domain, ENV['URL'] || 'localhost:4567'
 
-# SendGrid Variables
+# Contact Variables - SendGrid w/ Gmail Fallback
 set :email_to, 'ryanahamilton@gmail.com'
-set :email_username, ENV['SENDGRID_USERNAME'] || 'username'
+set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
+set :email_username, ENV['SENDGRID_USERNAME'] || 'username@gmail.com'
 set :email_password, ENV['SENDGRID_PASSWORD'] || 'secret'
 
 # SCSS Stylesheet
@@ -30,7 +31,7 @@ post '/contact' do
             :body => params[:message],
             :via => :smtp,
             :via_options => {
-              :address              => 'smtp.sendgrid.net',
+              :address              => 'smtp.' + settings.email_service,
               :port                 => '587',
               :enable_starttls_auto => true,
               :user_name            => settings.email_username,
