@@ -7,7 +7,7 @@ require 'pony' # Email Delivery
 set :app_domain, ENV['URL'] || 'localhost:4567'
 
 # Contact Variables - SendGrid w/ Gmail Fallback
-set :email_to, 'ryanahamilton@gmail.com'
+set :email_to, ENV['EMAIL_TO'] || 'you@domain.com'
 set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
 set :email_username, ENV['SENDGRID_USERNAME'] || 'username@gmail.com'
 set :email_password, ENV['SENDGRID_PASSWORD'] || 'secret'
