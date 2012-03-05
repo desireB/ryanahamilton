@@ -1,6 +1,11 @@
 @import 'reset';//Import Reset Stylesheet
 
 /*-------------------------------------------
+    VARIABLES
+-------------------------------------------*/
+$line-height: 24px;
+
+/*-------------------------------------------
     MIXINS
 -------------------------------------------*/
 // Vertical Gradient Background
@@ -13,7 +18,6 @@
   background-image: -webkit-linear-gradient(top, $startColor, $endColor);// Safari 5.1+, Chrome 10+
   background-image: -o-linear-gradient(top, $startColor, $endColor);// Opera 11.10
   background-image: linear-gradient(top, $startColor, $endColor);// The standard
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#{$startColor}, endColorstr=#{$endColor});// IE9 and down
 }
 
 // Rounded Corners
@@ -23,14 +27,17 @@
   border-radius: $radius;
 }
 
+// Box Shadow
+@mixin box-shadow($attr) {
+  -moz-box-shadow: $attr;
+  -webkit-box-shadow: $attr;
+  box-shadow: $attr;
+}
+
 /*-------------------------------------------
-    WEB FONTS
+    FONTS
 -------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Passion+One:700);
-
-@font-face {
-
-}
 
 /*-------------------------------------------
     GENERICS
@@ -40,7 +47,7 @@ body {
     family: "Century Gothic", "Helvetica Neue", arial, sans-serif;
     size: 16px;
   }
-  line-height: 24px;
+  line-height: $line-height;
   background: #ede7cf url(/images/texture-bg.png) fixed;
   color: #4c4c4c;
   -webkit-font-smoothing: antialiased;
@@ -63,8 +70,8 @@ a:focus {
   outline: 1px dotted #486ea3;
 }
 
-::selection { background: #486ea3; color: #fff; text-shadow: none; }
-::-moz-selection { background: #486ea3; color: #fff; text-shadow: none; }
+::selection         { background: #486ea3; color: #fff; text-shadow: none; }
+::-moz-selection    { background: #486ea3; color: #fff; text-shadow: none; }
 ::-webkit-selection { background: #486ea3; color: #fff; text-shadow: none; }
 
 /*-------------------------------------------
@@ -95,9 +102,7 @@ footer {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -moz-box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
-  -webkit-box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
-  box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
+  @include box-shadow(inset 0 -5px 10px rgba(0,0,0,0.2));
 }
 
 header div {
@@ -114,7 +119,7 @@ header div {
   h2,
   nav {
     background-color: #3e4750;
-    background-color: rgba(62,71,80,0.8);
+    background-color: rgba(62,71,80,0.85);
   }
 
   h1 {
@@ -128,12 +133,12 @@ header div {
 
     a {
       color: #fff;
-    }
 
-    a:hover,
-    a:focus {
-      color: #486e9f;
-    }
+      &:hover,
+      &:focus {
+        color: #486e9f;
+      }
+    }//a
 
     abbr[title] {
       border: none;
@@ -147,18 +152,25 @@ header div {
   }
 
   nav {
+    width: 430px;
     list-style: none;
-    padding: 0 14px 0;
     @include rounded-corners(0 0 3px 3px);
+    z-index: 999;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      @include box-shadow(0 0 10px rgba(0,0,0,0.2));
+    }
 
     li {
       display: inline;
-      margin: 0;
+      margin: 0 10px 0 0;
 
       a,
       a:visited {
         display: inline-block;
-        padding: 8px 10px;
+        padding: 6px 10px;
         color: #fff;
         font-size: 18px;
       }
@@ -166,6 +178,7 @@ header div {
       a:hover,
       a:focus {
         @include background-vertical-gradient(#4e73a9, #466ca5);
+        color: #fff;
         outline: none;
         text-shadow: none;
       }
@@ -179,21 +192,29 @@ header div {
 section {
   float: left;
   width: 980px;
+  padding: $line-height*2 0 $line-height*4;
 
   h1 {
-    margin: 24px 0 12px;
+    margin: 0 0 $line-height;
     font-size: 24px;
     font-family: 'Passion One';
     color: #3e4750;
   }
 
   p {
-    margin: 0 0 12px;
+    margin: 0 0 $line-height/1.5;
   }
 
   &#contact {
-    color: #fff;
-  }
+    float: none;
+    margin: 0 auto;
+    color: #eee8d0;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+
+    h1 {
+      color: #eee8d0;
+    }
+  }//&#contact
 }//section
 
 /*-------------------------------------------
@@ -210,29 +231,89 @@ section {
 
     img {
       border: solid 1px rgba(0,0,0,0.2);
-      -moz-box-shadow: 0 1px 1px #fff;
-      -webkit-box-shadow: 0 1px 1px #fff;
-      box-shadow: 0 1px 1px #fff;
+      @include box-shadow(0 1px 1px #fff);
     }
 
     &:hover img {
       opacity: 0.8;
     }
+  }//a
+
+}//#work div
+
+/*-------------------------------------------
+    CONTACT
+-------------------------------------------*/
+#footerBlock {
+  border-top: solid 1px #000;
+  padding: $line-height*2 0 $line-height;
+  background: #3e4750;
+  color: #eee8d0;
+}
+
+form {
+  width: 400px;
+
+  label {
+    display: none;
+
+    .no-placeholder & {
+      display: block;
+    }
+  }//label
+
+  input.textBox,
+  textarea {
+    display: block;
+    width: 400px;
+    margin-bottom: $line-height/2;
+    border: 0;
+    padding: 6px;
+    background-color: #8b9095;
+    color: #3e4750;
+    font-size: 16px;
+    line-height: $line-height;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:focus {
+      background-color: #f5f6f6;
+    }
+  }//input.textBox, textarea
+
+  ::-webkit-input-placeholder {
+    color: #3e4750;
   }
 
+  :-moz-placeholder {
+    color: #3e4750;
+  }
 
+  .btn {
+    float: right;
+    border: 0;
+    padding: 10px 20px;
+    @include rounded-corners(3px);
+    @include background-vertical-gradient(#4e73a9, #466ca5);
+    color: #dae2ed;
+    font-size: 16px;
+    text-transform: uppercase;
 
+    &:hover,
+    &:focus {
+      background-position: 0 -15px;
+      color: #fff;
+    }
+  }
 
+}//#form
+
+footer {
+  margin: $line-height*2 auto;
+  color: #8b9095;
+  text-shadow: none;
 }
-
-
-
-
-#footerBlock {
-  background: #3e4750;
-  padding: 48px 0;
-}
-
 
 
 /* Smaller than standard 960 (devices and browsers) */
