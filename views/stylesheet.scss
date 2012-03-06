@@ -157,12 +157,6 @@ header div {
     @include rounded-corners(0 0 3px 3px);
     z-index: 999;
 
-    &.fixed {
-      position: fixed;
-      top: 0;
-      @include box-shadow(0 0 10px rgba(0,0,0,0.2));
-    }
-
     li {
       display: inline;
       margin: 0 10px 0 0;
@@ -170,7 +164,7 @@ header div {
       a,
       a:visited {
         display: inline-block;
-        padding: 6px 10px;
+        padding: 6px 12px;
         color: #fff;
         font-size: 18px;
       }
@@ -182,7 +176,23 @@ header div {
         outline: none;
         text-shadow: none;
       }
+
+      &.top {
+        display: none;
+      }
     }//li
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      @include box-shadow(0 0 10px rgba(0,0,0,0.2));
+
+      li.top {
+        display: inline;
+        float: left;
+        margin: 0 0 0 10px;
+      }
+    }//nav.fixed
   }//nav
 }//header div
 
@@ -282,13 +292,8 @@ form {
     }
   }//input.textBox, textarea
 
-  ::-webkit-input-placeholder {
-    color: #3e4750;
-  }
-
-  :-moz-placeholder {
-    color: #3e4750;
-  }
+  ::-webkit-input-placeholder { color: #3e4750; }
+  :-moz-placeholder           { color: #3e4750; }
 
   .btn {
     float: right;
@@ -331,12 +336,7 @@ footer {
 
   header div h1,
   header div nav {
-    -webkit-border-top-left-radius: 0;
-    -webkit-border-bottom-left-radius: 0;
-    -moz-border-radius-topleft: 0;
-    -moz-border-radius-bottomleft: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    @include rounded-corners(0 3px 3px 0);
   }
 
   section {
