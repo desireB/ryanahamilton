@@ -202,13 +202,17 @@ header div {
 section {
   float: left;
   width: 980px;
-  padding: $line-height*2 0 $line-height*4;
+  padding: $line-height*2.5 0 $line-height*2;
 
   h1 {
     margin: 0 0 $line-height;
     font-size: 24px;
     font-family: 'Passion One';
     color: #3e4750;
+  }
+
+  h2 {
+    margin: 0 0 $line-height/2;
   }
 
   p {
@@ -255,9 +259,9 @@ section {
     CONTACT
 -------------------------------------------*/
 #footerBlock {
-  border-top: solid 1px #000;
+  border-top: solid $line-height/2 #4f555e;
   padding: $line-height*2 0 $line-height;
-  background: #3e4750;
+  background-color: #3e4750;
   color: #eee8d0;
 }
 
@@ -277,7 +281,7 @@ form {
     display: block;
     width: 400px;
     margin-bottom: $line-height/2;
-    border: 0;
+    border: solid 1px #3e4750;
     padding: 6px;
     background-color: #8b9095;
     color: #3e4750;
@@ -289,11 +293,19 @@ form {
 
     &:focus {
       background-color: #f5f6f6;
+      border-color: #466ca5;
     }
   }//input.textBox, textarea
 
-  ::-webkit-input-placeholder { color: #3e4750; }
-  :-moz-placeholder           { color: #3e4750; }
+  ::-webkit-input-placeholder {
+    color: #3e4750;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+  }
+
+  :-moz-placeholder {
+    color: #3e4750;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+  }
 
   .btn {
     float: right;
@@ -318,7 +330,11 @@ footer {
   margin: $line-height*2 auto;
   color: #8b9095;
   text-shadow: none;
-}
+
+  span {
+    float: right;
+  }
+}//footer
 
 
 /* Smaller than standard 960 (devices and browsers) */

@@ -7,6 +7,8 @@ rah.home = (function($, undefined){
     // Initializes Facebox
     $('a[rel*=facebox]').facebox();
 
+    // Add smooth scrolling to nav links
+    $('nav a').anchorAnimate();
 
     // Check the initial Poistion of the Sticky Header
     var stickyNavTop = $('nav').offset().top;
@@ -19,8 +21,10 @@ rah.home = (function($, undefined){
       }
     });
 
-
-    $('nav a').anchorAnimate()
+    // If no browser support for required attribute
+    // if !(Modernizr.input.required) {
+    //
+    // }
 
 
 
