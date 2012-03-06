@@ -112,21 +112,16 @@ footer {
 }
 
 header div {
-  margin-top: 40px;
+  margin: 40px 0 4px;
   float: left;
   width: 430px;
   text-align: right;
   text-transform: lowercase;
   color: #fff;
+  background-color: #3e4750;
+  background-color: rgba(62,71,80,0.8);
   text-shadow: 0 -1px 0 #3e474e;
-  @include rounded-corners(3px);
-
-  h1,
-  h2,
-  nav {
-    background-color: #3e4750;
-    background-color: rgba(62,71,80,0.8);
-  }
+  @include rounded-corners(3px 3px 0 0);
 
   h1 {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -153,54 +148,67 @@ header div {
 
   h2 {
     font-family: 'Open Sans Condensed', sans-serif;
-    margin: 0 0 4px;
+    margin: 0;
     padding: 0 20px 10px;
   }
-
-  nav {
-    width: 430px;
-    list-style: none;
-    @include rounded-corners(0 0 3px 3px);
-    z-index: 999;
-
-    li {
-      display: inline;
-      margin: 0 10px 0 0;
-
-      a,
-      a:visited {
-        display: inline-block;
-        padding: 6px 12px;
-        color: #fff;
-        font-size: 18px;
-      }
-
-      a:hover,
-      a:focus {
-        @include background-vertical-gradient(#4e73a9, #466ca5);
-        color: #fff;
-        outline: none;
-        text-shadow: none;
-      }
-
-      &.top {
-        display: none;
-      }
-    }//li
-
-    &.fixed {
-      position: fixed;
-      top: 0;
-      @include box-shadow(0 0 10px rgba(0,0,0,0.2));
-
-      li.top {
-        display: inline;
-        float: left;
-        margin: 0 0 0 10px;
-      }
-    }//nav.fixed
-  }//nav
 }//header div
+
+nav {
+  width: 430px;
+  float: left;
+  clear: both;
+  list-style: none;
+  background-color: #3e4750;
+  background-color: rgba(62,71,80,0.8);
+  @include rounded-corners(0 0 3px 3px);
+  z-index: 999;
+  text-align: right;
+  text-shadow: 0 -1px 0 #3e474e;
+
+  li {
+    display: inline;
+    margin: 0;
+
+    a,
+    a:visited {
+      display: inline-block;
+      padding: 6px 12px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    a:hover,
+    a:focus {
+      @include background-vertical-gradient(#4e73a9, #466ca5);
+      color: #fff;
+      outline: none;
+      text-shadow: none;
+    }
+
+    &.top {
+      display: none;
+      float: left;
+
+      a {
+        @include rounded-corners(0 0 0 3px);
+      }
+    }//li.top
+
+    &:last-of-type a {
+      @include rounded-corners(0 0 3px 0);
+    }
+  }//li
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    @include box-shadow(0 0 10px rgba(0,0,0,0.2));
+
+    li.top {
+      display: inline;
+    }
+  }//nav.fixed
+}//nav
 
 /*-------------------------------------------
     SECTIONS
@@ -285,7 +293,7 @@ section {
 }//#footerBlock
 
 form {
-  width: 400px;
+  width: 430px;
 
   label {
     display: none;
@@ -298,7 +306,7 @@ form {
   input.textBox,
   textarea {
     display: block;
-    width: 400px;
+    width: 430px;
     margin-bottom: $line-height/2;
     border: solid 1px #3e4750;
     padding: 6px;
@@ -343,8 +351,7 @@ form {
       background-position: 0 -15px;
       color: #fff;
     }
-  }
-
+  }//.btn
 }//#form
 
 footer {
@@ -357,33 +364,36 @@ footer {
   }
 }//footer
 
-
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 979px) {}
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 979px) {
+/*-------------------------------------------
+    MEDIA QUERIES
+-------------------------------------------*/
+/* Smaller than standard conatainer, converts to fluid */
+@media only screen and (max-width: 979px) {
 
   header,
   #pageBody,
   footer {
-    width: 100%;
+    width: auto;
     margin: 0;
   }
 
-  header div h1,
-  header div nav {
-    @include rounded-corners(0 3px 3px 0);
+  header div {
+    @include rounded-corners(0 3px 0 0);
+  }
+
+  header nav {
+    @include rounded-corners(0 0 3px 0);
   }
 
   section {
-    width: 100%;
-    padding: 0 20px;
+    width: auto;
+    padding: $line-height*2 20px;
   }
+
 }
 
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 820px) {
+/* Adjusts hieght of header block photo */
+@media only screen and (max-width: 840px) {
 
   #headerBlock {
     height: 384px;
@@ -391,8 +401,42 @@ footer {
 
 }
 
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 979px) {}
+
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
+
+
+/* Screen is <= to nav width */
+@media only screen and (max-width: 430px) {
+
+  header div,
+  header nav {
+    @include rounded-corners(0);
+    width: 100%;
+  }
+
+  header div {
+    margin-top: 0;
+
+    h1 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }//header div
+
+  form {
+    width: 280px;
+
+    input.textBox,
+    textarea {
+      width: 280px;
+    }
+  }//form
+
+}
