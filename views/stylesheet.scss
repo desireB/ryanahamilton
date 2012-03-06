@@ -104,7 +104,7 @@ footer {
 -------------------------------------------*/
 #headerBlock {
   height: 480px;
-  background: url(/images/header/photo.jpg) no-repeat;
+  background: url(/images/header/photo.jpg) no-repeat center 0;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
@@ -370,6 +370,12 @@ footer {
 /* Smaller than standard conatainer, converts to fluid */
 @media only screen and (max-width: 979px) {
 
+  #headerBlock {
+    -moz-background-size: auto 480px;
+    -webkit-background-size: auto 480px;
+    background-size: auto 480px;
+  }
+
   header,
   #pageBody,
   footer {
@@ -393,10 +399,28 @@ footer {
 }
 
 /* Adjusts hieght of header block photo */
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 810px) {
 
   #headerBlock {
     height: 384px;
+    -moz-background-size: auto 384px;
+    -webkit-background-size: auto 384px;
+    background-size: auto 384px;
+  }
+
+  header div {
+    margin-top: 0;
+    width: 350px;
+    @include rounded-corners(0);
+
+    h1 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }//header div
+
+  nav {
+    width: 350px;
   }
 
 }
@@ -408,27 +432,28 @@ footer {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
+
+
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 480px) {}
 
 
 /* Screen is <= to nav width */
 @media only screen and (max-width: 430px) {
+
+  #headerBlock {
+    background-color: #b9cbdb;
+    background-position: center 96px;
+    -moz-background-size: auto 288px;
+    -webkit-background-size: auto 288px;
+    background-size: auto 288px;
+  }
 
   header div,
   header nav {
     @include rounded-corners(0);
     width: 100%;
   }
-
-  header div {
-    margin-top: 0;
-
-    h1 {
-      font-size: 48px;
-      line-height: 48px;
-    }
-  }//header div
 
   form {
     width: 280px;
