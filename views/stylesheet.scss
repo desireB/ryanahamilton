@@ -129,7 +129,7 @@ header div {
     font-weight: normal;
     line-height: 60px;
     margin: 0;
-    padding: 12px 20px 0 10px;
+    padding: 12px 20px 0 0;
     @include rounded-corners(3px 3px 0 0);
 
     a {
@@ -149,7 +149,7 @@ header div {
   h2 {
     font-family: 'Open Sans Condensed', sans-serif;
     margin: 0;
-    padding: 0 20px 10px;
+    padding: 0 20px 10px 0;
   }
 }//header div
 
