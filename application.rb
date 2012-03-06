@@ -13,7 +13,7 @@ set :email_username, ENV['SENDGRID_USERNAME'] || 'username@gmail.com'
 set :email_password, ENV['SENDGRID_PASSWORD'] || 'secret'
 
 # SCSS Stylesheet
-get '/stylesheets/main.css' do
+get '/stylesheets/application.css' do
   content_type 'text/css', :charset => 'utf-8'
   scss :stylesheet, :style => :compressed
 end
