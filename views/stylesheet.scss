@@ -22,8 +22,8 @@ $line-height: 24px;
 
 // Rounded Corners
 @mixin rounded-corners($radius) {
-  -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
   border-radius: $radius;
 }
 
@@ -32,6 +32,13 @@ $line-height: 24px;
   -moz-box-shadow: $attr;
   -webkit-box-shadow: $attr;
   box-shadow: $attr;
+}
+
+// Transistion
+@mixin transistion($property, $duration: 2s) {
+  -moz-transition: $property $duration; /* Firefox 4 */
+  -webkit-transition: $property $duration; /* Safari and Chrome */
+  transition: $property $duration;
 }
 
 /*-------------------------------------------
@@ -58,6 +65,7 @@ a,
 a:visited {
   color: #486e9f;
   text-decoration: none;
+  @include transistion(color, 0.5s);
 }
 
 a:hover,
@@ -70,9 +78,9 @@ a:focus {
   outline: 1px dotted #486ea3;
 }
 
-::selection         { background: #486ea3; color: #fff; text-shadow: none; }
 ::-moz-selection    { background: #486ea3; color: #fff; text-shadow: none; }
 ::-webkit-selection { background: #486ea3; color: #fff; text-shadow: none; }
+::selection         { background: #486ea3; color: #fff; text-shadow: none; }
 
 /*-------------------------------------------
     STRUCTURE
@@ -97,10 +105,8 @@ footer {
 #headerBlock {
   height: 480px;
   background: url(/images/header/photo.jpg) no-repeat;
-  background-size: 1000px auto;
-  -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -webkit-background-size: cover;
   background-size: cover;
   @include box-shadow(inset 0 -5px 10px rgba(0,0,0,0.2));
 }
@@ -112,14 +118,14 @@ header div {
   text-align: right;
   text-transform: lowercase;
   color: #fff;
-  text-shadow: 0 1px 0 #3e474e;
+  text-shadow: 0 -1px 0 #3e474e;
   @include rounded-corners(3px);
 
   h1,
   h2,
   nav {
     background-color: #3e4750;
-    background-color: rgba(62,71,80,0.85);
+    background-color: rgba(62,71,80,0.8);
   }
 
   h1 {
@@ -223,7 +229,6 @@ section {
     float: none;
     margin: 0 auto;
     color: #eee8d0;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.8);
 
     h1 {
       color: #eee8d0;
@@ -255,6 +260,14 @@ section {
 
 }//#work div
 
+#facebox {
+
+  h1 {
+    font-size: 24px;
+    font-family: 'Passion One';
+  }
+}//#facebox
+
 /*-------------------------------------------
     CONTACT
 -------------------------------------------*/
@@ -263,7 +276,13 @@ section {
   padding: $line-height*2 0 $line-height;
   background-color: #3e4750;
   color: #eee8d0;
-}
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+
+  a:hover,
+  a:focus {
+    color: #fff;
+  }
+}//#footerBlock
 
 form {
   width: 400px;
@@ -290,6 +309,7 @@ form {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    @include transistion(background-color, 1s);
 
     &:focus {
       background-color: #f5f6f6;
@@ -316,6 +336,7 @@ form {
     color: #dae2ed;
     font-size: 16px;
     text-transform: uppercase;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
 
     &:hover,
     &:focus {
