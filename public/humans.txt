@@ -1,0 +1,11 @@
+/* TEAM */
+  Everyman: Ryan Hamilton
+  Twitter: @ryanahamilton
+  From: Brooklyn, New York, USA
+
+/* SITE */
+  Last update: 2012/03/06
+  Language: English
+  Doctype: HTML5
+  Standards: HTML5, CSS3
+  Software: TextMate, Photoshop, ImageOptim
