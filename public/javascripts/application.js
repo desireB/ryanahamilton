@@ -4,6 +4,9 @@ if (typeof rah === 'undefined') { rah = {};}
 rah.home = (function($, undefined){
   function init() {
 
+    // Fade in of header, aesthic value only
+    $('header').fadeIn(1400);
+
     // Initializes Facebox
     $('a[rel*=facebox]').facebox();
 
@@ -21,13 +24,10 @@ rah.home = (function($, undefined){
       }
     });
 
-    // If no browser support for required attribute
+    // Form validation if browser doesn't support reuired attributes on input/textarea elements
     // if !(Modernizr.input.required) {
     //
     // }
-
-
-
 
 
   }
