@@ -29,8 +29,20 @@
         <%= yield %>
       </div>
     </div>
-    <div id="footerBlock">
+    <div id="contactBlock">
       <section id="contact">
+
+        <div id="elsewhere">
+          <h1>Elsewhere</h1>
+
+          <ul>
+            <li><a href="http://twitter.com/ryanahamilton">@ryanahamilton</a></li>
+            <li></li>
+          </ul>
+
+        </div>
+
+
         <h1>Contact</h1>
 
         <form action="/contact" method="post" accept-charset="utf-8">
@@ -46,8 +58,11 @@
           <input type="submit" value="Send" class="btn" />
         </form>
 
-      </section>
 
+
+      </section>
+    </div>
+    <div id="footerBlock">
       <footer>Ryan <abbr title="Armstrong">A</abbr>. Hamilton &copy; <%= Time.now.year %> <span><a href="https://github.com/ryanahamilton/resume">View source</a> on GitHub.</span></footer>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

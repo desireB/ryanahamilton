@@ -87,6 +87,7 @@ a:focus {
 -------------------------------------------*/
 #headerBlock,
 #pageBodyBlock,
+#contactBlock,
 #footerBlock {
   width: 100%;
   float: left;
@@ -94,6 +95,7 @@ a:focus {
 
 header,
 #pageBody,
+#contact,
 footer {
   width: 980px;
   margin: 0 auto;
@@ -293,9 +295,9 @@ section {
 /*-------------------------------------------
     CONTACT
 -------------------------------------------*/
-#footerBlock {
+#contactBlock {
   border-top: solid $line-height/2 #4f555e;
-  padding: $line-height*2 0 $line-height;
+  padding: $line-height 0 $line-height*2;
   background-color: #3e4750;
   color: #eee8d0;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
@@ -304,7 +306,7 @@ section {
   a:focus {
     color: #fff;
   }
-}//#footerBlock
+}//#contactBlock
 
 form {
   width: 430px;
@@ -371,10 +373,32 @@ form {
   }//.btn
 }//#form
 
+
+#elsewhere {
+  float: right;
+  width: 430px;
+
+  ul {
+    list-style: none;
+
+    a {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+/*-------------------------------------------
+    FOOTER
+-------------------------------------------*/
+#footerBlock {
+  background-color: #4f555e;
+}
+
 footer {
-  margin: $line-height*2 auto;
+  margin: $line-height/2 auto $line-height*3;
   color: #8b9095;
-  text-shadow: none;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
 
   span {
     float: right;
@@ -395,7 +419,7 @@ footer {
 
   header,
   #pageBody,
-  footer {
+  #contact {
     width: auto;
     margin: 0;
   }
@@ -411,6 +435,12 @@ footer {
   section {
     width: auto;
     padding: $line-height*2 20px;
+  }
+
+  footer {
+    width: auto;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 
 }
@@ -481,5 +511,9 @@ footer {
       width: 280px;
     }
   }//form
+
+  footer span {
+    float: left;
+  }
 
 }
