@@ -300,7 +300,7 @@ section {
   padding: $line-height 0 $line-height*2;
   background-color: #3e4750;
   color: #eee8d0;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.6);
 
   a:hover,
   a:focus {
@@ -385,8 +385,8 @@ form {
       font-size: 20px;
       font-weight: bold;
     }
-  }
-}
+  }//ul
+}//#elsewhere
 
 /*-------------------------------------------
     FOOTER
