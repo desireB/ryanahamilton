@@ -87,7 +87,7 @@ a:focus {
 -------------------------------------------*/
 #headerBlock,
 #pageBodyBlock,
-#contactBlock,
+#metaBlock,
 #footerBlock {
   width: 100%;
   float: left;
@@ -95,7 +95,7 @@ a:focus {
 
 header,
 #pageBody,
-#contact,
+#meta,
 footer {
   width: 980px;
   margin: 0 auto;
@@ -226,7 +226,7 @@ section {
 
   h1 {
     margin: 0 0 $line-height;
-    font-size: 24px;
+    font-size: 36px;
     font-family: 'Passion One';
     color: #3e4750;
   }
@@ -238,16 +238,6 @@ section {
   p {
     margin: 0 0 $line-height/1.5;
   }
-
-  &#contact {
-    float: none;
-    margin: 0 auto;
-    color: #eee8d0;
-
-    h1 {
-      color: #eee8d0;
-    }
-  }//&#contact
 }//section
 
 /*-------------------------------------------
@@ -287,106 +277,170 @@ section {
 
   h1 {
     font-size: 36px;
-    font-family: 'Passion One';
-    margin: $line-height/2 0 $line-height*2;
+    margin: $line-height/2 0 $line-height/4;
+  }
+
+  p {
+    margin: 0 0 $line-height;
+  }
+
+  .meta {
+    margin-bottom:$line-height/2;
+    font-size: 18px;
+    color: #c5c5c5;
   }
 }//#facebox
 
 /*-------------------------------------------
-    CONTACT
+    META BLOCK (ELSEWHERE & CONTACT)
 -------------------------------------------*/
-#contactBlock {
+#metaBlock {
   border-top: solid $line-height/2 #4f555e;
   padding: $line-height 0 $line-height*2;
   background-color: #3e4750;
-  color: #eee8d0;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.6);
+  color: #8b9095;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
 
   a:hover,
   a:focus {
     color: #fff;
   }
-}//#contactBlock
 
-form {
-  width: 430px;
-
-  label {
-    display: none;
-
-    .no-placeholder & {
-      display: block;
-    }
-  }//label
-
-  input.textBox,
-  textarea {
-    display: block;
-    width: 430px;
-    margin-bottom: $line-height/2;
-    border: solid 1px #3e4750;
-    padding: 6px;
-    background-color: #8b9095;
-    color: #3e4750;
-    font-size: 16px;
-    line-height: $line-height;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    @include rounded-corners(0);
-    @include transistion(background-color, 1s);
-
-    &:focus {
-      background-color: #f5f6f6;
-      border-color: #466ca5;
-    }
-  }//input.textBox, textarea
-
-  ::-webkit-input-placeholder {
-    color: #3e4750;
-    font-weight: bold;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+  h1 {
+    color: #8b9095;
   }
+}//#metaBlock
 
-  :-moz-placeholder {
-    color: #3e4750;
-    font-weight: bold;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.3);
-  }
-
-  .btn {
-    float: right;
-    border: 0;
-    padding: 10px 20px;
-    @include rounded-corners(3px);
-    @include background-vertical-gradient(#4e73a9, #466ca5);
-    color: #dae2ed;
-    font-size: 16px;
-    text-transform: uppercase;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
-
-    &:hover,
-    &:focus {
-      background-position: 0 -15px;
-      color: #fff;
-    }
-  }//.btn
-}//#form
-
-
+/*-------------------------------------------
+    ELSEWHERE
+-------------------------------------------*/
 #elsewhere {
-  float: right;
-  width: 430px;
+  width: 575px;
 
   ul {
     list-style: none;
+    margin: 0;
+
+    li {
+      float: left;
+      margin: 0 6px 6px 0;
+    }
 
     a {
-      font-size: 20px;
+      float: left;
+      font-size: 36px;
       font-weight: bold;
-    }
+      text-shadow: none;
+      color: #3e4750;
+      padding: 8px 6px 10px;
+      @include rounded-corners(3px);
+      background-color: #4f555e;
+      overflow: hidden;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        @include transistion(color, 0.5s);
+        @include transistion(background-color, 0.5s);
+
+        &.twitter     { background-color: #33ccff; }
+        &.foursquare  { background-color: #2398c9; }
+        &.facebook    { background-color: #1d4088; }
+        &.rdio        { background-color: #007dc3; }
+        &.quora       { background-color: #a82400; }
+        &.tumblr      { background-color: #2c4762; }
+        &.github      { background-color: #495961; }
+        &.dribbble    { background-color: #ea4c89; }
+        &.kickstarter { background-color: #87c442; }
+        &.svpply      { background-color: #000; }
+        &.fitbit      { background-color: #00d6d1; }
+        &.vimeo       { background-color: #4bf; }
+        &.zerply      { background-color: #9dbc7a; }
+        &.linkedin    { background-color: #069; }
+        &.flickr      { background-color: #0063dc; }
+        &.songkick    { background-color: #f80447; }
+        &.pinterest   { background-color: #cb2027; }
+        &.untappd     { background-color: #c60; }
+        &.letterboxd  { background-color: #456; }
+      }
+
+    }//a
   }//ul
 }//#elsewhere
+
+/*-------------------------------------------
+    CONTACT
+-------------------------------------------*/
+#contact {
+  width: 380px;
+  float: right;
+
+  form {
+    width: 380px;
+
+    label {
+      display: none;
+
+      .no-placeholder & {
+        display: block;
+      }
+    }//label
+
+    input.textBox,
+    textarea {
+      display: block;
+      width: inherit;
+      margin-bottom: $line-height/2;
+      border: solid 1px #3e4750;
+      padding: 6px;
+      background-color: #8b9095;
+      color: #3e4750;
+      font-size: 16px;
+      line-height: $line-height;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      @include rounded-corners(0);
+      @include transistion(background-color, 1s);
+
+      &:focus {
+        background-color: #f5f6f6;
+        border-color: #466ca5;
+      }
+    }//input.textBox, textarea
+
+    ::-webkit-input-placeholder {
+      color: #3e4750;
+      font-weight: bold;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+    }
+
+    :-moz-placeholder {
+      color: #3e4750;
+      font-weight: bold;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+    }
+
+    .btn {
+      float: right;
+      border: 0;
+      padding: 10px 20px;
+      @include rounded-corners(3px);
+      @include background-vertical-gradient(#4e73a9, #466ca5);
+      color: #dae2ed;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+
+      &:hover,
+      &:focus {
+        background-position: 0 -15px;
+        color: #fff;
+      }
+    }//.btn
+  }//#form
+}//#contact
 
 /*-------------------------------------------
     FOOTER
@@ -402,6 +456,15 @@ footer {
 
   span {
     float: right;
+  }
+
+  a {
+    font-weight: bold;
+  }
+
+  a:hover,
+  a:focus {
+    color: #fff;
   }
 }//footer
 
@@ -504,6 +567,7 @@ footer {
   }
 
   form {
+    float: left;
     width: 280px;
 
     input.textBox,

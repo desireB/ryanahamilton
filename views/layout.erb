@@ -20,7 +20,7 @@
         </div>
         <nav>
           <li class="top"><a href="#headerBlock" title="Back to top"><img src="/images/header/to-top@2x.png" alt="Top" width="12" height="12" /></a></li>
-          <li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#elsewhere">Elsewhere</a></li><li><a href="#contact">Contact</a></li>
         </nav>
       </header>
     </div>
@@ -29,41 +29,57 @@
         <%= yield %>
       </div>
     </div>
-    <div id="contactBlock">
-      <section id="contact">
+    <div id="metaBlock">
+      <div id="meta">
 
-        <div id="elsewhere">
+        <section id="elsewhere">
           <h1>Elsewhere</h1>
-
           <ul>
-            <li><a href="http://twitter.com/ryanahamilton"><span class="icon-twitter-sign"></span>@ryanahamilton</a></li>
-            <li></li>
+            <li><a href="http://twitter.com/ryanahamilton" rel="me" class="twitter">Twitter</a></li>
+            <li><a href="https://foursquare.com/ryanahamilton" rel="me" class="foursquare">foursquare</a></li>
+            <li><a href="https://www.facebook.com/ryanahamilton" rel="me" class="facebook">Facebook</a></li>
+            <li><a href="http://www.rdio.com/people/ryanahamilton/" rel="me" class="rdio">Rdio</a></li>
+            <li><a href="http://www.quora.com/Ryan-Hamilton" rel="me" class="quora">Quora</a></li>
+            <li><a href="http://ryanahamilton.tumblr.com" rel="me" class="tumblr">tumblr</a></li>
+            <li><a href="https://github.com/ryanahamilton" rel="me" class="github">GitHub</a></li>
+            <li><a href="http://dribbble.com/ryanahamilton" rel="me" class="dribbble">Dribbble</a></li>
+            <li><a href="http://www.kickstarter.com/profile/ryanahamilton" rel="me" class="kickstarter">Kickstarter</a></li>
+            <li><a href="https://svpply.com/ryanahamilton" rel="me" class="svpply">Svpply</a></li>
+            <li><a href="http://www.fitbit.com/user/2238B5" rel="me" class="fitbit">Fitbit</a></li>
+            <li><a href="https://vimeo.com/ryanahamilton" rel="me" class="vimeo">Vimeo</a></li>
+            <li><a href="http://zerply.com/ryanahamilton" rel="me" class="zerply">Zerply</a></li>
+            <li><a href="http://www.linkedin.com/in/ryanhamilton" rel="me" class="linkedin">LinkedIn</a></li>
+            <li><a href="http://www.flickr.com/photos/ryanahamilton/" rel="me" class="flickr">Flickr</a></li>
+            <li><a href="http://www.songkick.com/users/ryanahamilton" rel="me" class="songkick">Songkick</a></li>
+            <li><a href="http://pinterest.com/ryanahamilton/" rel="me" class="pinterest">Pinterest</a></li>
+            <li><a href="http://untappd.com/user/ryanahamilton" rel="me" class="untappd">Untappd</a></li>
+            <li><a href="http://letterboxd.com/ryanahamilton/" rel="me" class="letterboxd">Letterboxd</a></li>
+            <!-- <li><a href="" rel="me" class=""></a></li> -->
           </ul>
+        </section>
 
-        </div>
+        <section id="contact">
+          <h1>Contact</h1>
+
+          <form action="/contact" method="post" accept-charset="utf-8">
+            <label for="name">Your Name</label>
+            <input type="name" name="name" placeholder="Your Name" class="textBox" required />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="you@domain.com" class="textBox" required />
+
+            <label for="message">What can I help you with?</label>
+            <textarea name="message" rows="5" cols="40" placeholder="What can I help you with?" required></textarea>
+
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </section>
 
 
-        <h1>Contact</h1>
-
-        <form action="/contact" method="post" accept-charset="utf-8">
-          <label for="name">Your Name</label>
-          <input type="name" name="name" placeholder="Your Name" class="textBox" required />
-
-          <label for="email">Email</label>
-          <input type="email" name="email" placeholder="you@domain.com" class="textBox" required />
-
-          <label for="message">What can I help you with?</label>
-          <textarea name="message" rows="5" cols="40" placeholder="What can I help you with?" required></textarea>
-
-          <input type="submit" value="Send" class="btn" />
-        </form>
-
-
-
-      </section>
+      </div>
     </div>
     <div id="footerBlock">
-      <footer>Ryan <abbr title="Armstrong">A</abbr>. Hamilton &copy; <%= Time.now.year %> <span><a href="https://github.com/ryanahamilton/resume">View source</a> on GitHub.</span></footer>
+      <footer>Ryan <abbr title="Armstrong">A</abbr>. Hamilton &copy; <%= Time.now.year %> <span><a href="https://github.com/ryanahamilton/ryanahamilton">View source</a> on GitHub.</span></footer>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/javascripts/jquery-1.7.1.min.js"><\/script>')</script>
