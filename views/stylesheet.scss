@@ -398,7 +398,7 @@ form {
 footer {
   margin: $line-height/2 auto $line-height*3;
   color: #8b9095;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
 
   span {
     float: right;
