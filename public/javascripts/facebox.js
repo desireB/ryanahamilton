@@ -83,7 +83,7 @@
 
   $.extend($.facebox, {
     settings: {
-      opacity      : 0.2,
+      // opacity      : 0.2,
       overlay      : true,
       loadingImage : '/images/facebox/loading.gif',
       closeImage   : '/images/facebox/closelabel.png',
@@ -274,7 +274,7 @@
       $("body").append('<div id="facebox_overlay" class="facebox_hide"></div>')
 
     $('#facebox_overlay').hide().addClass("facebox_overlayBG")
-      .css('opacity', $.facebox.settings.opacity)
+      // .css('opacity', $.facebox.settings.opacity)
       .click(function() { $(document).trigger('close.facebox') })
       .fadeIn(200)
     return false

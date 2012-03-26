@@ -75,6 +75,17 @@
 }
 
 .facebox_overlayBG {
-  background-color: #000;
+  background-image: rgba(0,0,0,0.725);
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(0,0,0,0.3)), color-stop(100%, rgba(0,0,0,0.725)));
+  background-image: -webkit-radial-gradient(center center, rgba(0,0,0,0.3),rgba(0,0,0,0.725));
+  background-image: -moz-radial-gradient(center center, rgba(0,0,0,0.3),rgba(0,0,0,0.725));
+  background-image: -o-radial-gradient(center center, rgba(0,0,0,0.3),rgba(0,0,0,0.725));
+  background-image: -ms-radial-gradient(center center, rgba(0,0,0,0.3),rgba(0,0,0,0.725));
+  background-image: radial-gradient(center center, rgba(0,0,0,0.3),rgba(0,0,0,0.725));
   z-index: 99;
+}
+
+.no-rgba .facebox_overlayBG {
+  background-color: #000;
+  opacity: 0.2;
 }
