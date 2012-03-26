@@ -178,7 +178,7 @@ nav {
     a,
     a:visited {
       display: inline-block;
-      padding: 6px 12px;
+      padding: 6px 8px;
       color: #fff;
       font-size: 18px;
     }
@@ -315,7 +315,7 @@ section {
     ELSEWHERE
 -------------------------------------------*/
 #elsewhere {
-  width: 575px;
+  width: 55%;
 
   ul {
     list-style: none;
@@ -372,11 +372,11 @@ section {
     CONTACT
 -------------------------------------------*/
 #contact {
-  width: 380px;
+  width: 39%;
   float: right;
 
   form {
-    width: 380px;
+    width: 100%;
 
     label {
       display: none;
@@ -482,7 +482,7 @@ footer {
 
   header,
   #pageBody,
-  #contact {
+  #meta {
     width: auto;
     margin: 0;
   }
@@ -495,7 +495,8 @@ footer {
     @include rounded-corners(0 0 3px 0);
   }
 
-  section {
+  #pageBody section,
+  #meta {
     width: auto;
     padding: $line-height*2 20px;
   }
@@ -531,6 +532,16 @@ footer {
 
   nav {
     width: 350px;
+  }
+
+  #elsewhere {
+    width: auto;
+  }
+
+  #contact {
+    float: left;
+    clear: both;
+    width: auto;
   }
 
 }
