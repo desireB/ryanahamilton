@@ -58,6 +58,7 @@ body {
   background: #ede7cf url(/images/texture-bg.png) fixed;
   color: #3F474C;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
 }
 
