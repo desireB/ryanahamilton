@@ -534,7 +534,7 @@ footer {
     margin-left: 20px;
   }
 
-}
+}//@media only screen and (max-width: 979px)
 
 /* Adjusts hieght of header block photo */
 @media only screen and (max-width: 810px) {
@@ -569,7 +569,7 @@ footer {
 
     img {
       width: 30%;
-      margin: 0 5% 4% 0;
+      margin: 0 5% 5% 0;
     }
 
     a:nth-child(3) img {
@@ -597,20 +597,7 @@ footer {
     width: auto;
   }
 
-}
-
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 979px) {}
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
-
-
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 480px) {}
-
+}//@media only screen and (max-width: 810px)
 
 /* Screen is <= to nav width */
 @media only screen and (max-width: 430px) {
@@ -648,4 +635,4 @@ footer {
     float: left;
   }
 
-}
+}//@media only screen and (max-width: 430px)
