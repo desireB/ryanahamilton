@@ -36,9 +36,15 @@ $line-height: 24px;
 
 // Transistion
 @mixin transistion($property, $duration: 2s) {
-  -moz-transition: $property $duration; /* Firefox 4 */
-  -webkit-transition: $property $duration; /* Safari and Chrome */
+  -moz-transition: $property $duration;
+  -webkit-transition: $property $duration;
   transition: $property $duration;
+}
+
+@mixin box-sizing ($attr: border-box) {
+  -moz-box-sizing: $attr;
+  -webkit-box-sizing: $attr;
+  box-sizing: $attr;
 }
 
 /*-------------------------------------------
@@ -79,9 +85,11 @@ a:focus {
   outline: 1px dotted #486ea3;
 }
 
-::-moz-selection    { background: #486ea3; color: #fff; text-shadow: none; }
-::-webkit-selection { background: #486ea3; color: #fff; text-shadow: none; }
-::selection         { background: #486ea3; color: #fff; text-shadow: none; }
+//Using a mixin as a variable since I can't combine these rules
+@mixin selection-attrs { background: #486ea3; color: #fff; text-shadow: none; }
+::-moz-selection    { @include selection-attrs; }
+::-webkit-selection { @include selection-attrs; }
+::selection         { @include selection-attrs; }
 
 /*-------------------------------------------
     STRUCTURE
@@ -424,9 +432,7 @@ section {
       color: #3e4750;
       font-size: 16px;
       line-height: $line-height;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
+      @include box-sizing;
       @include border-radius(0);
       @include transistion(background-color, 1s);
 
