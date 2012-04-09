@@ -18,31 +18,30 @@ rah.home = (function($, undefined){
 
     $(window).scroll(function(){
       if( $(window).scrollTop() > stickyNavTop ) {
-              $('nav').addClass('fixed');
+          $('nav').addClass('fixed');
       } else {
-              $('nav').removeClass('fixed');
+          $('nav').removeClass('fixed');
       }
     });
-
-    // Form validation if browser doesn't support reuired attributes on input/textarea elements
-    // if !(Modernizr.input.required) {
-    //
-    // }
 
     // Renders latest Instagram photos
     // 849 = User ID
     $.ajax({
-        type: "GET",
-        dataType: "jsonp",
-        cache: false,
-        url: "https://api.instagram.com/v1/users/849/media/recent/?access_token=849.e20f292.f2a2382a03394356bc8747d9decfe12f",
-        success: function(data) {
-
+      type: 'GET',
+      dataType: 'jsonp',
+      cache: false,
+      url: 'https://api.instagram.com/v1/users/849/media/recent/?access_token=849.e20f292.f2a2382a03394356bc8747d9decfe12f',
+      success: function(data) {
         for (var i = 0; i < 6; i++) {
-          $("#instagram").append("<a target='_blank' title='View Larger' href='" + data.data[i].link +"'><img src='" + data.data[i].images.low_resolution.url +"' alt='' /></a>");
+          $('#instagram').append("<a target='_blank' title='View Larger' href='" + data.data[i].link +"'><img src='" + data.data[i].images.low_resolution.url +"' alt='' /></a>");
         }
       }
     });
+
+    // TODO: Form validation if browser doesn't support reuired attributes on input/textarea elements
+    // if !(Modernizr.input.required) {
+    //
+    // }
 
   }
 

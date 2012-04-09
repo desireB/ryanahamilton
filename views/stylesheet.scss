@@ -47,6 +47,12 @@ $line-height: 24px;
   box-sizing: $attr;
 }
 
+@mixin background-size ($attr) {
+  -moz-background-size: $attr;
+  -webkit-background-size: $attr;
+  background-size: $attr;
+}
+
 /*-------------------------------------------
     FONTS
 -------------------------------------------*/
@@ -71,6 +77,7 @@ body {
 a,
 a:visited {
   color: #486e9f;
+  font-weight: bold;
   text-decoration: none;
   @include transistion(color, 0.5s);
 }
@@ -116,9 +123,7 @@ footer {
 #headerBlock {
   height: 480px;
   background: url(/images/header/photo.jpg) no-repeat center 0;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+  @include background-size(cover);
   @include box-shadow(inset 0 -5px 10px rgba(0,0,0,0.2));
 }
 
@@ -190,6 +195,7 @@ nav {
       padding: 6px;
       color: #fff;
       font-size: 18px;
+      font-weight: normal;
     }
 
     a:hover,
@@ -235,7 +241,7 @@ section {
 
   h1 {
     margin: 0 0 $line-height;
-    font-size: 36px;
+    font-size: 72px;
     font-family: 'Passion One';
     color: #3e4750;
   }
@@ -315,13 +321,16 @@ section {
     margin: $line-height/2 0 $line-height/4;
   }
 
-  p {
+  p,
+  ul,
+  ol {
+    font-size: 14px;
     margin: 0 0 $line-height;
   }
 
   .meta {
-    margin-bottom:$line-height/2;
-    font-size: 18px;
+    margin-bottom: $line-height/2;
+    font-size: 16px;
     color: #c5c5c5;
   }
 }//#facebox
@@ -334,7 +343,7 @@ section {
   padding: $line-height 0 $line-height*2;
   background-color: #3e4750;
   color: #8b9095;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
 
   a:hover,
   a:focus {
@@ -485,7 +494,7 @@ section {
 footer {
   margin: $line-height/2 auto $line-height*3;
   color: #8b9095;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 
   span {
     float: right;
@@ -508,9 +517,7 @@ footer {
 @media only screen and (max-width: 979px) {
 
   #headerBlock {
-    -moz-background-size: auto 480px;
-    -webkit-background-size: auto 480px;
-    background-size: auto 480px;
+    @include background-size(auto 480px);
   }
 
   header,
@@ -547,9 +554,7 @@ footer {
 
   #headerBlock {
     height: 384px;
-    -moz-background-size: auto 384px;
-    -webkit-background-size: auto 384px;
-    background-size: auto 384px;
+    @include background-size(auto 384px);
   }
 
   header div {
@@ -612,15 +617,17 @@ footer {
     height: 360px;
     background-color: #b9cbdb;
     background-position: center 96px;
-    -moz-background-size: auto 288px;
-    -webkit-background-size: auto 288px;
-    background-size: auto 288px;
+    @include background-size(auto 288px);
   }
 
   header div,
   header nav {
     @include border-radius(0);
     width: 100%;
+  }
+
+  section h1 {
+    font-size: 36px;
   }
 
   #facebox .content {
