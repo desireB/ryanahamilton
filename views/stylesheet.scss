@@ -335,10 +335,14 @@ section {
   }
 
   p,
-  ul,
-  ol {
+  ul {
     font-size: 14px;
-    margin: 0 0 $line-height;
+    margin: 0 0 $line-height/2;
+  }
+
+  ul {
+    margin-left: $line-height;
+    list-style-type: disc;
   }
 
   .meta {
