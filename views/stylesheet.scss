@@ -5,6 +5,9 @@
 // ------------------------------------------
 $line-height: 24px;
 
+$link-color: #486e9f;
+$link-hover-color: darken($link-color, 20%);
+
 // ------------------------------------------
 // MIXINS
 // ------------------------------------------
@@ -77,7 +80,7 @@ body {
 
 a,
 a:visited {
-  color: #486e9f;
+  color: $link-color;
   font-weight: bold;
   text-decoration: none;
   @include transistion(color, 0.5s);
@@ -85,7 +88,7 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: #3e4750;
+  color: $link-hover-color;
   text-decoration: none;
 }
 
@@ -159,7 +162,7 @@ header div {
 
       &:hover,
       &:focus {
-        color: #486e9f;
+        color: $link-color;
       }
     }//a
 
