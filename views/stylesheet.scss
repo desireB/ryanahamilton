@@ -1,13 +1,14 @@
 @import 'reset';//Import Reset Stylesheet
 
-/*-------------------------------------------
-    VARIABLES
--------------------------------------------*/
+// ------------------------------------------
+// VARIABLES
+// ------------------------------------------
 $line-height: 24px;
 
-/*-------------------------------------------
-    MIXINS
--------------------------------------------*/
+// ------------------------------------------
+// MIXINS
+// ------------------------------------------
+
 // Vertical Gradient Background
 @mixin background-vertical-gradient($startColor: #555,$endColor: #333) {
   background-color: $endColor;
@@ -53,14 +54,14 @@ $line-height: 24px;
   background-size: $attr;
 }
 
-/*-------------------------------------------
-    FONTS
--------------------------------------------*/
+// ------------------------------------------
+// FONTS
+// ------------------------------------------
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Passion+One:700);
 
-/*-------------------------------------------
-    GENERICS
--------------------------------------------*/
+// ------------------------------------------
+// GENERICS
+// ------------------------------------------
 body {
   font: {
     family: "Century Gothic", "helvetica neue", helvetica, arial, sans-serif;
@@ -98,9 +99,9 @@ a:focus {
 ::-webkit-selection { @include selection-attrs; }
 ::selection         { @include selection-attrs; }
 
-/*-------------------------------------------
-    STRUCTURE
--------------------------------------------*/
+// ------------------------------------------
+// STRUCTURE
+// ------------------------------------------
 #headerBlock,
 #pageBodyBlock,
 #metaBlock,
@@ -117,9 +118,9 @@ footer {
   margin: 0 auto;
 }
 
-/*-------------------------------------------
-    HEADER
--------------------------------------------*/
+// ------------------------------------------
+// HEADER
+// ------------------------------------------
 #headerBlock {
   height: 480px;
   background: url(/images/header/photo.jpg) no-repeat center 0;
@@ -232,9 +233,9 @@ nav {
   }//nav.fixed
 }//nav
 
-/*-------------------------------------------
-    SECTIONS
--------------------------------------------*/
+// ------------------------------------------
+// SECTIONS
+// ------------------------------------------
 section {
   float: left;
   width: 980px;
@@ -261,9 +262,9 @@ section {
   }//p
 }//section
 
-/*-------------------------------------------
-    INSTAGRAM
--------------------------------------------*/
+// ------------------------------------------
+// INSTAGRAM
+// ------------------------------------------
 #instagram {
   width: inherit;
   padding-top: 0;
@@ -287,9 +288,9 @@ section {
   }
 }//#instagram
 
-/*-------------------------------------------
-    WORK
--------------------------------------------*/
+// ------------------------------------------
+// WORK
+// ------------------------------------------
 #work div {
   width: inherit;
 
@@ -352,9 +353,9 @@ section {
   }
 }//#facebox
 
-/*-------------------------------------------
-    META BLOCK (ELSEWHERE & CONTACT)
--------------------------------------------*/
+// ------------------------------------------
+// META BLOCK (ELSEWHERE & CONTACT)
+// ------------------------------------------
 #metaBlock {
   border-top: solid $line-height/2 #4f555e;
   padding: $line-height 0 $line-height*2;
@@ -372,9 +373,9 @@ section {
   }
 }//#metaBlock
 
-/*-------------------------------------------
-    ELSEWHERE
--------------------------------------------*/
+// ------------------------------------------
+// ELSEWHERE
+// ------------------------------------------
 #elsewhere {
   width: 55%;
 
@@ -431,9 +432,9 @@ section {
   }//ul
 }//#elsewhere
 
-/*-------------------------------------------
-    CONTACT
--------------------------------------------*/
+// ------------------------------------------
+// CONTACT
+// ------------------------------------------
 #contact {
   width: 39%;
   float: right;
@@ -503,9 +504,9 @@ section {
   }//#form
 }//#contact
 
-/*-------------------------------------------
-    FOOTER
--------------------------------------------*/
+// ------------------------------------------
+// FOOTER
+// ------------------------------------------
 #footerBlock {
   background-color: #4f555e;
 }
@@ -529,10 +530,11 @@ footer {
   }
 }//footer
 
-/*-------------------------------------------
-    MEDIA QUERIES
--------------------------------------------*/
-/* Smaller than standard conatainer, converts to fluid */
+// ------------------------------------------
+// MEDIA QUERIES
+// ------------------------------------------
+
+//Smaller than standard conatainer, converts to fluid
 @media only screen and (max-width: 979px) {
 
   #headerBlock {
@@ -568,7 +570,7 @@ footer {
 
 }//@media only screen and (max-width: 979px)
 
-/* Adjusts hieght of header block photo */
+//Adjusts hieght of header block photo
 @media only screen and (max-width: 810px) {
 
   #headerBlock {
@@ -640,7 +642,7 @@ footer {
 
 }//@media only screen and (max-width: 810px)
 
-/* Screen is <= to nav width */
+//Screen is <= to nav width
 @media only screen and (max-width: 430px) {
 
   #headerBlock {
