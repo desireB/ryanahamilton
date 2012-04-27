@@ -37,7 +37,7 @@ post '/contact' do
               :user_name            => settings.email_username,
               :password             => settings.email_password,
               :authentication       => :plain,
-              :domain               =>  settings.app_domain
+              :domain               => settings.app_domain
             }
   redirect '/'
 end
