@@ -13,7 +13,7 @@ rah.home = (function($, undefined){
     // Add smooth scrolling to nav links
     $('nav a').anchorAnimate();
 
-    // Check the initial Poistion of the Sticky Header
+    // Check the initial Position of the Sticky Header
     var stickyNavTop = $('nav').offset().top;
 
     $(window).scroll(function(){
