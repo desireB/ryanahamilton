@@ -1,4 +1,6 @@
-## Ryan Hamilton's Portfolio Site
+## [ryanahamilton.com](http://ryanahamilton.com)
+
+A place to call home.
 
 ### Run Locally
 Install the gems and run with:
