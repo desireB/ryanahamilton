@@ -249,7 +249,7 @@ section {
 
   h1 {
     margin: 0 0 $line-height;
-    font-size: 72px;
+    font-size: 60px;
     font-family: 'Passion One';
     color: #3e4750;
   }
@@ -277,10 +277,10 @@ section {
 
   img {
     float: left;
+    opacity: 0.5;
     width: 15%;
     margin: 0 2% 2% 0;
     @include border-radius(3px);
-    @include box-shadow(0 0 5px rgba(0,0,0,0.3));
   }
 
   a:nth-child(6) img {
@@ -289,8 +289,9 @@ section {
 
   a:hover img,
   a:focus img {
-    opacity: 0.8;
-    @include transistion(opacity, 0.75s);
+    opacity: 1;
+    @include transistion(all, 0.75s);
+    @include box-shadow(0 0 5px rgba(0,0,0,0.3));
   }
 }//#instagram
 
