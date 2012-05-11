@@ -40,6 +40,7 @@ post '/contact' do
               :domain               => settings.app_domain
             }
   redirect '/'
+  # TODO: Add flash notice of some sort to confirm message being sent
 end
 
 # Work Modal Views
