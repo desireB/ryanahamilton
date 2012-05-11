@@ -12,6 +12,11 @@ set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
 set :email_username, ENV['SENDGRID_USERNAME'] || 'username@gmail.com'
 set :email_password, ENV['SENDGRID_PASSWORD'] || 'secret'
 
+# Redirect to non-www domain
+before do
+  redirect request.url.sub(/www\./, ''), 301 if request.host =~ /^www/
+end
+
 # SCSS Stylesheet
 get '/stylesheets/application.css' do
   content_type 'text/css', :charset => 'utf-8'
