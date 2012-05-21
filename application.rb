@@ -3,6 +3,10 @@ require 'sinatra'
 require 'sass' # CSS Preprocessing
 require 'pony' # Email Delivery
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 # Variables
 set :app_domain, ENV['URL'] || 'localhost:4567'
 
