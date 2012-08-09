@@ -108,16 +108,16 @@ a:focus {
 // ------------------------------------------
 // STRUCTURE
 // ------------------------------------------
-#headerBlock,
-#pageBodyBlock,
-#metaBlock,
-#footerBlock {
+#header-block,
+#pageBody-block,
+#meta-block,
+#footer-block {
   width: 100%;
   float: left;
 }
 
 header,
-#pageBody,
+#page-body,
 #meta,
 footer {
   width: 980px;
@@ -127,7 +127,7 @@ footer {
 // ------------------------------------------
 // HEADER
 // ------------------------------------------
-#headerBlock {
+#header-block {
   height: 480px;
   background: url(/images/header/photo.jpg) no-repeat center 0;
   @include background-size(cover);
@@ -363,7 +363,7 @@ section {
 // ------------------------------------------
 // META BLOCK (ELSEWHERE & CONTACT)
 // ------------------------------------------
-#metaBlock {
+#meta-block {
   border-top: solid $line-height/2 #4f555e;
   padding: $line-height 0 $line-height*2;
   background-color: #3e4750;
@@ -457,7 +457,7 @@ section {
       }
     }//label
 
-    input.textBox,
+    input.text-box,
     textarea {
       display: block;
       width: inherit;
@@ -515,7 +515,7 @@ section {
 // ------------------------------------------
 // FOOTER
 // ------------------------------------------
-#footerBlock {
+#footer-block {
   background-color: #4f555e;
 }
 
@@ -545,12 +545,12 @@ footer {
 //Smaller than standard conatainer, converts to fluid
 @media only screen and (max-width: 979px) {
 
-  #headerBlock {
+  #header-block {
     @include background-size(auto 480px);
   }
 
   header,
-  #pageBody,
+  #page-body,
   #meta {
     width: auto;
     margin: 0;
@@ -564,7 +564,7 @@ footer {
     @include border-radius(0 0 3px 0);
   }
 
-  #pageBody section,
+  #page-body section,
   #meta {
     width: auto;
     padding: $line-height*2 20px;
@@ -581,7 +581,7 @@ footer {
 //Adjusts hieght of header block photo
 @media only screen and (max-width: 810px) {
 
-  #headerBlock {
+  #header-block {
     height: 384px;
     @include background-size(auto 384px);
   }
@@ -653,7 +653,7 @@ footer {
 //Screen is <= to nav width
 @media only screen and (max-width: 600px) {
 
-  #headerBlock {
+  #header-block {
     height: 360px;
     background-color: #b9cbdb;
     background-position: center 96px;
