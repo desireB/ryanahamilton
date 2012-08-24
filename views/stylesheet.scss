@@ -75,7 +75,8 @@ body {
   }
   line-height: $line-height;
   background: #ede7cf url(/images/texture-bg.png) fixed;
-  color: #3F474C;
+  background-size: 75px 75px;
+  color: #3f474c;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   text-shadow: 0 1px 0 rgba(255,255,255,0.8);
