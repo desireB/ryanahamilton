@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'sinatra'
-gem 'sass', '~> 3.2.1'
-gem 'pony'
+gem 'sinatra',      '~> 1.4.3'
+gem 'sass',         '~> 3.2.12'
+gem 'pony',         '~> 1.5.1'
 gem 'newrelic_rpm'
